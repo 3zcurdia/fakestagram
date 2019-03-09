@@ -3,6 +3,7 @@
 class Post < ApplicationRecord
   belongs_to :account, inverse_of: :posts
   has_many :likes, inverse_of: :posts
+  has_many :comments, inverse_of: :posts
 
   validates :title, presence: true
 
