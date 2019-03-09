@@ -7,14 +7,10 @@ module Api
     # GET /posts
     def index
       @posts = Post.all
-
-      render json: @posts
     end
 
     # GET /posts/1
-    def show
-      render json: @post
-    end
+    def show; end
 
     # POST /posts
     def create
@@ -22,7 +18,7 @@ module Api
       @post = Post.new(post_params)
 
       if @post.save
-        render json: @post, status: :created, location: @post
+        render :show, status: :created, location: @post
       else
         render json: @post.errors, status: :unprocessable_entity
       end
@@ -49,7 +45,7 @@ module Api
     end
 
     def post_params
-      params.require(:post).permit(:title, :description, :likes_count, :comments_count)
+      params.require(:post).permit(:image, :title, :description, :likes_count, :comments_count)
     end
   end
 end

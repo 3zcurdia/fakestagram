@@ -17,3 +17,7 @@ Style/NumericLiterals:
 Metrics/BlockLength:
   Exclude:
     - db/schema.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**.rb

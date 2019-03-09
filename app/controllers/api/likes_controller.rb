@@ -12,7 +12,8 @@ module Api
 
     # POST /likes
     def create
-      if @like = @post.create_like(account: @account)
+      @like = @post.build_like(account: @account)
+      if @like.save
         render json: @like, status: :created, location: @like
       else
         render json: @like.errors, status: :unprocessable_entity

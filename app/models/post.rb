@@ -7,5 +7,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
+  has_one_attached :image
+
   default_scope { order(created_at: :desc) }
 end
