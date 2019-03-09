@@ -8,13 +8,10 @@ module Api
     # GET /comments
     def index
       @comments = @post.comments
-
-      render json: @comments
     end
 
     # GET /comments/1
     def show
-      render json: @comment
     end
 
     # POST /comments
@@ -22,7 +19,7 @@ module Api
       @comment = @post.build_comment(comment_params)
 
       if @comment.save
-        render json: @comment, status: :created, location: @comment
+        render :show, status: :created, location: @comment
       else
         render json: @comment.errors, status: :unprocessable_entity
       end
@@ -31,7 +28,7 @@ module Api
     # PATCH/PUT /comments/1
     def update
       if @comment.update(comment_params)
-        render json: @comment
+        render :show
       else
         render json: @comment.errors, status: :unprocessable_entity
       end

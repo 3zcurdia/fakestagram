@@ -2,6 +2,7 @@
 
 module Api
   class BaseController < ApplicationController
+    before_action :default_format_json
     before_action :set_account
 
     protected
@@ -14,6 +15,10 @@ module Api
       @account = Account.find(account_id)
     rescue ActiveRecord::RecordNotFound
       head(:unauthorized)
+    end
+
+    def default_format_json
+      request.format = 'json'
     end
   end
 end

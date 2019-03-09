@@ -8,8 +8,6 @@ module Api
     # GET /likes
     def index
       @likes = @post.likes
-
-      render json: @likes
     end
 
     # POST /likes
