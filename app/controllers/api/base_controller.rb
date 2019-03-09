@@ -8,7 +8,7 @@ module Api
     protected
 
     def account_id
-      @account_id ||= request.headers["Authorization"]&.split()&.last
+      @account_id ||= request.headers['Authorization']&.split()&.last
     end
 
     def set_account

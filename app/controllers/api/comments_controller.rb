@@ -11,8 +11,7 @@ module Api
     end
 
     # GET /comments/1
-    def show
-    end
+    def show; end
 
     # POST /comments
     def create
