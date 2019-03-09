@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Api
-  class PostsController < ApplicationController
+  class PostsController < BaseController
     before_action :set_post, only: %i[show update destroy]
 
     # GET /posts
@@ -18,6 +18,7 @@ module Api
 
     # POST /posts
     def create
+      params[:post][:account_id] = account_id if params[:post]
       @post = Post.new(post_params)
 
       if @post.save

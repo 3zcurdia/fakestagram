@@ -1,21 +1,20 @@
 # frozen_string_literal: true
 
 module Api
-  class LikesController < ApplicationController
+  class LikesController < BaseController
+    before_action :set_post
     before_action :set_like, only: %i[show update destroy]
 
     # GET /likes
     def index
-      @likes = Like.all
+      @likes = @post.likes
 
       render json: @likes
     end
 
     # POST /likes
     def create
-      @like = Like.new(like_params)
-
-      if @like.save
+      if @like = @post.create_like(account: @account)
         render json: @like, status: :created, location: @like
       else
         render json: @like.errors, status: :unprocessable_entity
@@ -33,8 +32,8 @@ module Api
       @like = Like.find(params[:id])
     end
 
-    def like_params
-      params.require(:like).permit(:post_id, :account_id)
+    def set_post
+      @post = Post.find(params[:post_id])
     end
   end
 end

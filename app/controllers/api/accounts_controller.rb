@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 module Api
-  class AccountsController < ApplicationController
+  class AccountsController < BaseController
+    skip_before_action :set_account
     # GET /accounts/1
     def show
       @account = Account.find(params[:id])
