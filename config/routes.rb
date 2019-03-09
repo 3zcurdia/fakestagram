@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       resources :likes, only: %i[index create destroy]
       resources :comments
     end
+    resource :profile, only: :show
+    namespace :profile do
+      resources :posts, only: :index
+    end
   end
   root 'home#index'
 end
