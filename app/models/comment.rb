@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
   belongs_to :post, inverse_of: :comments
   belongs_to :account
 
-  validates :content, presence: true, length: { min: 4 }
+  validates :content, presence: true, length: { minimum: 4 }
 end
