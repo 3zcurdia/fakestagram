@@ -21,7 +21,6 @@ module Api
 
     private
 
-    # Only allow a trusted parameter "white list" through.
     def account_params
       params.require(:account).permit(:name, :devise_number, :devise_model)
     end
