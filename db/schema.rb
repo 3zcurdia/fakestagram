@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_203658) do
   end
 
   create_table 'comments', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.uuid 'post_id'
+    t.bigint 'post_id'
     t.uuid 'account_id'
     t.text 'content', null: false
     t.datetime 'created_at', precision: 6, null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_203658) do
   end
 
   create_table 'likes', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.uuid 'post_id'
+    t.bigint 'post_id'
     t.uuid 'account_id'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_203658) do
     t.index ['post_id'], name: 'index_likes_on_post_id'
   end
 
-  create_table 'posts', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+  create_table 'posts', force: :cascade do |t|
     t.uuid 'account_id'
     t.string 'title', null: false
     t.integer 'likes_count', default: 0

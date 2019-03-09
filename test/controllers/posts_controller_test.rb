@@ -21,18 +21,18 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show post' do
-    get post_url(@post), as: :json
+    get api_post_url(@post), as: :json
     assert_response :success
   end
 
   test 'should update post' do
-    patch post_url(@post), params: { post: { account_id: @post.account_id, comments_count: @post.comments_count, description: @post.description, likes_count: @post.likes_count, title: @post.title } }, as: :json
+    patch api_post_url(@post), params: { post: { account_id: @post.account_id, comments_count: @post.comments_count, description: @post.description, likes_count: @post.likes_count, title: @post.title } }, as: :json
     assert_response 200
   end
 
   test 'should destroy post' do
     assert_difference('Post.count', -1) do
-      delete post_url(@post), as: :json
+      delete api_post_url(@post), as: :json
     end
 
     assert_response 204

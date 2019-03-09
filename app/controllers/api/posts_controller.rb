@@ -14,11 +14,10 @@ module Api
 
     # POST /posts
     def create
-      params[:post][:account_id] = account_id if params[:post]
-      @post = Post.new(post_params)
+      @post = Post.new(post_params.merge(account: @account))
 
       if @post.save
-        render :show, status: :created, location: @post
+        render :show, status: :created
       else
         render json: @post.errors, status: :unprocessable_entity
       end
@@ -45,7 +44,7 @@ module Api
     end
 
     def post_params
-      params.require(:post).permit(:image, :title, :description, :likes_count, :comments_count)
+      params.permit(:image, :title, :description, :likes_count, :comments_count)
     end
   end
 end

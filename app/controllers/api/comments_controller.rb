@@ -18,7 +18,7 @@ module Api
       @comment = @post.build_comment(comment_params)
 
       if @comment.save
-        render :show, status: :created, location: @comment
+        render :show, status: :created
       else
         render json: @comment.errors, status: :unprocessable_entity
       end
@@ -49,7 +49,7 @@ module Api
     end
 
     def comment_params
-      params.require(:comment).permit(:content)
+      params.permit(:content)
     end
   end
 end
