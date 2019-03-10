@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :accounts, only: %i[create show]
     resources :posts do
-      resources :likes, only: %i[index create destroy]
+      resource :like, only: %i[create destroy]
+      resources :likes, only: :index
       resources :comments
     end
     resource :profile, only: :show

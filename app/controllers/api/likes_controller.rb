@@ -3,7 +3,6 @@
 module Api
   class LikesController < BaseController
     before_action :set_post
-    before_action :set_like, only: %i[show update destroy]
 
     # GET /likes
     def index
@@ -12,8 +11,8 @@ module Api
 
     # POST /likes
     def create
-      @like = @post.build_like(account: @account)
-      if @like.save
+      @like = @post.likes.find_or_initialize_by(account: @account)
+      if @like.persisted? || @like.save
         render json: @like, status: :created
       else
         render json: @like.errors, status: :unprocessable_entity
@@ -22,14 +21,10 @@ module Api
 
     # DELETE /likes/1
     def destroy
-      @like.destroy
+      @post.likes.where(account: @account).destroy_all
     end
 
     private
-
-    def set_like
-      @like = Like.find(params[:id])
-    end
 
     def set_post
       @post = Post.find(params[:post_id])
