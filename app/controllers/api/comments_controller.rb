@@ -15,7 +15,7 @@ module Api
 
     # POST /comments
     def create
-      @comment = @post.build_comment(comment_params)
+      @comment = @post.comments.build(comment_params.merge(account: @account))
 
       if @comment.save
         render :show, status: :created

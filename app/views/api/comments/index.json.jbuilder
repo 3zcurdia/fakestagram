@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 json.array! @comments do |comment|
+  json.id comment.id
   json.author do
     json.name comment.author_name
   end

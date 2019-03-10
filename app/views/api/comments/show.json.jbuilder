@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+json.id @comment.id
 json.author do
   json.name @comment.author_name
 end
