@@ -41,8 +41,5 @@ module Fakestagram
         resource '*', headers: :any, methods: %i[get post put options]
       end
     end
-    config.generators do |g|
-      g.orm :active_record, primary_key_type: :uuid
-    end
   end
 end

@@ -2,7 +2,7 @@
 
 class CreateComments < ActiveRecord::Migration[6.0]
   def change
-    create_table :comments, id: :uuid do |t|
+    create_table :comments do |t|
       t.references :post, foreign_key: true
       t.references :account, foreign_key: true, type: :uuid
       t.text :content, null: false

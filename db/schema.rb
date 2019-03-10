@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_203658) do
     t.index ['key'], name: 'index_active_storage_blobs_on_key', unique: true
   end
 
-  create_table 'comments', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+  create_table 'comments', force: :cascade do |t|
     t.bigint 'post_id'
     t.uuid 'account_id'
     t.text 'content', null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_203658) do
     t.index ['post_id'], name: 'index_comments_on_post_id'
   end
 
-  create_table 'likes', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+  create_table 'likes', force: :cascade do |t|
     t.bigint 'post_id'
     t.uuid 'account_id'
     t.datetime 'created_at', precision: 6, null: false
