@@ -4,7 +4,7 @@ module Api
   module Profile
     class PostsController < BaseController
       def index
-        render json: @account.posts
+        @posts = @account.posts.includes(:account, image_attachment: :blob)
       end
     end
   end

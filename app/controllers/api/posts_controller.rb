@@ -6,7 +6,7 @@ module Api
 
     # GET /posts
     def index
-      @posts = Post.all
+      @posts = Post.includes(:account, image_attachment: :blob).all
     end
 
     # GET /posts/1

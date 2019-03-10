@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Comment < ApplicationRecord
+  include AuthorData
   belongs_to :post, inverse_of: :comments
   belongs_to :account
 

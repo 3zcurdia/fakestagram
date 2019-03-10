@@ -7,7 +7,7 @@ module Api
 
     # GET /comments
     def index
-      @comments = @post.comments
+      @comments = @post.comments.includes(:account)
     end
 
     # GET /comments/1

@@ -7,7 +7,7 @@ module Api
 
     # GET /likes
     def index
-      @likes = @post.likes
+      @likes = @post.likes.includes(:account)
     end
 
     # POST /likes
