@@ -20,6 +20,7 @@ gem 'image_processing', '~> 1.2'
 gem 'oj'
 gem 'oj_mimic_json'
 gem 'rack-cors'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry-byebug'
