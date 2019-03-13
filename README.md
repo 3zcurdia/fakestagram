@@ -1,4 +1,12 @@
-# README
-[documentation](https://app.swaggerhub.com/apis-docs/3zcurdia/fakestagram-api/1.0)
+# Fakestagram
 
-Fake instagram example app
+Fake instagram api, an MVP concept for academic purposes 
+
+## References
+- [Api documentation](https://fakestagram.docs.stoplight.io)
+
+## License
+
+MIT License
+
+Copyright (c) 2019 Luis Ezcurdia
