@@ -17,10 +17,10 @@ gem 'puma', '~> 3.11'
 
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'image_processing', '~> 1.2'
+gem 'kaminari'
 gem 'oj'
 gem 'oj_mimic_json'
 gem 'rack-cors'
-gem 'kaminari'
 
 group :development, :test do
   gem 'pry-byebug'

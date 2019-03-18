@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  devise_number: MyString
-  devise_model: MyString
+  device_number: MyString
+  device_model: MyString
 
 two:
   name: MyString
-  devise_number: MyString
-  devise_model: MyString
+  device_number: MyString
+  device_model: MyString

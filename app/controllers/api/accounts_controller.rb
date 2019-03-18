@@ -23,7 +23,7 @@ module Api
     private
 
     def account_params
-      params.permit(:name, :devise_number, :devise_model)
+      params.permit(:name, :device_number, :device_model)
     end
   end
 end

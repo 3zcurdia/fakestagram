@@ -14,7 +14,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create account' do
     assert_difference('Account.count') do
-      post accounts_url, params: { account: { devise_model: @account.devise_model, devise_number: @account.devise_number, name: @account.name } }, as: :json
+      post accounts_url, params: { account: { device_model: @account.device_model, device_number: @account.device_number, name: @account.name } }, as: :json
     end
 
     assert_response 201
@@ -26,7 +26,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update account' do
-    patch account_url(@account), params: { account: { devise_model: @account.devise_model, devise_number: @account.devise_number, name: @account.name } }, as: :json
+    patch account_url(@account), params: { account: { device_model: @account.device_model, device_number: @account.device_number, name: @account.name } }, as: :json
     assert_response 200
   end
 
