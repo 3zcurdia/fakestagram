@@ -20,6 +20,7 @@ gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 gem 'oj'
 gem 'oj_mimic_json'
+gem 'pundit'
 gem 'rack-cors'
 
 group :development, :test do

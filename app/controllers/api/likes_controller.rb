@@ -7,11 +7,13 @@ module Api
     # GET /likes
     def index
       @likes = @post.likes.includes(:account)
+      authorize(@likes)
     end
 
     # POST /likes
     def create
       @like = @post.likes.find_or_initialize_by(account: @account)
+      authorize(@like)
       if @like.persisted? || @like.save
         render json: @like, status: :created
       else
@@ -21,6 +23,7 @@ module Api
 
     # DELETE /likes/1
     def destroy
+      authorize(@post)
       @post.likes.where(account: @account).destroy_all
     end
 

@@ -8,14 +8,18 @@ module Api
     # GET /comments
     def index
       @comments = @post.comments.includes(:account)
+      authorize(@comments)
     end
 
     # GET /comments/1
-    def show; end
+    def show
+      authorize(@comment)
+    end
 
     # POST /comments
     def create
       @comment = @post.comments.build(comment_params.merge(account: @account))
+      authorize(@comment)
 
       if @comment.save
         render :show, status: :created
@@ -26,6 +30,7 @@ module Api
 
     # PATCH/PUT /comments/1
     def update
+      authorize(@comment)
       if @comment.update(comment_params)
         render :show
       else
@@ -35,6 +40,7 @@ module Api
 
     # DELETE /comments/1
     def destroy
+      authorize(@comment)
       @comment.destroy
     end
 

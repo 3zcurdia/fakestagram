@@ -7,14 +7,18 @@ module Api
     # GET /posts
     def index
       @posts = Post.includes(:account, image_attachment: :blob).page(params[:page])
+      authorize @posts
     end
 
     # GET /posts/1
-    def show; end
+    def show
+      authorize @post
+    end
 
     # POST /posts
     def create
       @post = Post.new(post_params.merge(account: @account))
+      authorize @post
 
       if @post.save
         render :show, status: :created
@@ -25,6 +29,7 @@ module Api
 
     # PATCH/PUT /posts/1
     def update
+      authorize @post
       if @post.update(post_params)
         render json: @post
       else
@@ -34,6 +39,7 @@ module Api
 
     # DELETE /posts/1
     def destroy
+      authorize @post
       @post.destroy
     end
 

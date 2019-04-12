@@ -20,5 +20,9 @@ module Api
     def default_format_json
       request.format = 'json'
     end
+
+    def current_user
+      @current_user ||= set_account
+    end
   end
 end
