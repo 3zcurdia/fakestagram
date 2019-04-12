@@ -2,14 +2,12 @@
 
 one:
   account: one
-  title: MyString
-  description: MyString
+  title: A Post
   likes_count: 1
   comments_count: 1
 
 two:
   account: two
-  title: MyString
-  description: MyString
+  title: Another Post
   likes_count: 1
   comments_count: 1

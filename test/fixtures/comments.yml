@@ -3,9 +3,9 @@
 one:
   post: one
   account: one
-  content: MyText
+  content: Lorem ipsum dolor sit amet
 
 two:
   post: two
   account: two
-  content: MyText
+  content: consectetur adipisicing elit, sed do eiusmod tempor

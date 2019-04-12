@@ -3,7 +3,15 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def comment
+    @comment ||= comments(:one)
+  end
+
+  def test_valid
+    assert comment.valid?
+  end
+
+  def test_author_data
+    assert_equal 'Joe Doe', comment.author_name
+  end
 end
