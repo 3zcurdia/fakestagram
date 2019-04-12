@@ -11,4 +11,10 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   default_scope { order(created_at: :desc) }
+
+  def image_data=(base64_data)
+    Base64File.new(base64_data) do |f|
+      image.attach(filename: f.filename, io: f.io, content_type: f.content_type)
+    end
+  end
 end

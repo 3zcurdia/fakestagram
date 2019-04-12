@@ -50,7 +50,7 @@ module Api
     end
 
     def post_params
-      params.permit(:image, :title, :description, :likes_count, :comments_count)
+      params.permit(:image, :image_data, :title, :description, :likes_count, :comments_count)
     end
   end
 end
