@@ -1,7 +1,8 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   TargetRubyVersion: 2.6
+
+Metrics/LineLength:
+  Max: 120
 
 Style/Documentation:
   Enabled: false
@@ -14,10 +15,8 @@ Style/NumericLiterals:
   Exclude:
     - db/schema.rb
 
-Metrics/BlockLength:
+Metrics:
   Exclude:
+    - bin/**
     - db/schema.rb
-
-Metrics/MethodLength:
-  Exclude:
     - db/migrate/**.rb
