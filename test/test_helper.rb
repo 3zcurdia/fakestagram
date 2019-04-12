@@ -11,5 +11,12 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def default_headers
+    { authorization: accounts(:one).id }
+  end
+
+  def json_response
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
 end

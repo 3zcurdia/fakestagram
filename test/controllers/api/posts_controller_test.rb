@@ -7,32 +7,36 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @post = posts(:one)
   end
 
+  def default_params
+    { title: "A post title" }
+  end
+
   test 'should get index' do
-    get posts_url, as: :json
+    get api_posts_url, headers: default_headers, as: :json
     assert_response :success
   end
 
   test 'should create post' do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { account_id: @post.account_id, comments_count: @post.comments_count, description: @post.description, likes_count: @post.likes_count, title: @post.title } }, as: :json
+      post api_posts_url, params: default_params, headers: default_headers, as: :json
     end
 
     assert_response 201
   end
 
   test 'should show post' do
-    get api_post_url(@post), as: :json
+    get api_post_url(@post), headers: default_headers, as: :json
     assert_response :success
   end
 
   test 'should update post' do
-    patch api_post_url(@post), params: { post: { account_id: @post.account_id, comments_count: @post.comments_count, description: @post.description, likes_count: @post.likes_count, title: @post.title } }, as: :json
+    patch api_post_url(@post), params: default_params, headers: default_headers, as: :json
     assert_response 200
   end
 
   test 'should destroy post' do
     assert_difference('Post.count', -1) do
-      delete api_post_url(@post), as: :json
+      delete api_post_url(@post), headers: default_headers, as: :json
     end
 
     assert_response 204

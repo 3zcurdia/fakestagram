@@ -3,8 +3,8 @@
 class Post < ApplicationRecord
   include AuthorData
   belongs_to :account, inverse_of: :posts
-  has_many :likes, inverse_of: :post
-  has_many :comments, inverse_of: :post
+  has_many :likes, inverse_of: :post, dependent: :destroy
+  has_many :comments, inverse_of: :post, dependent: :destroy
 
   validates :title, presence: true
 

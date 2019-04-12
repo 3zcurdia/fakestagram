@@ -11,3 +11,9 @@ two:
   title: Another Post
   likes_count: 1
   comments_count: 1
+
+three:
+  account: two
+  title: New Post
+  likes_count: 0
+  comments_count: 0
