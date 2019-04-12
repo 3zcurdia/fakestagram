@@ -17,6 +17,6 @@ class AccountTest < ActiveSupport::TestCase
   end
 
   def test_id_as_uuid
-    assert /[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}/ =~ account.id
+    assert account.id =~ /[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}/
   end
 end
