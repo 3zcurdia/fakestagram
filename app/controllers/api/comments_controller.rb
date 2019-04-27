@@ -18,7 +18,7 @@ module Api
 
     # POST /comments
     def create
-      @comment = @post.comments.build(comment_params.merge(account: @account))
+      @comment = @post.comments.build(comment_params.merge(account: current_user))
       authorize(@comment)
 
       if @comment.save

@@ -17,4 +17,8 @@ class Post < ApplicationRecord
       image.attach(filename: f.filename, io: f.io, content_type: f.content_type)
     end
   end
+
+  def liked_by?(account)
+    likes.where(account_id: account.id).exists?
+  end
 end

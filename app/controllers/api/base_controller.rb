@@ -3,7 +3,7 @@
 module Api
   class BaseController < ApplicationController
     before_action :default_format_json
-    before_action :set_account
+    before_action :current_user
 
     protected
 
@@ -12,7 +12,7 @@ module Api
     end
 
     def set_account
-      @account = Account.find(account_id)
+      Account.find(account_id)
     rescue ActiveRecord::RecordNotFound
       head(:unauthorized)
     end
@@ -24,5 +24,6 @@ module Api
     def current_user
       @current_user ||= set_account
     end
+    helper_method :current_user
   end
 end

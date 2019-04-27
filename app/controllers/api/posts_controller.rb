@@ -6,7 +6,9 @@ module Api
 
     # GET /posts
     def index
-      @posts = Post.includes(:account, image_attachment: :blob).page(params[:page])
+      posts = Post.page(params[:page])
+      @posts = posts.includes(:account, image_attachment: :blob)
+      @liked_posts = posts.where(account_id: account_id).pluck(:id)
       authorize @posts
     end
 
@@ -17,7 +19,7 @@ module Api
 
     # POST /posts
     def create
-      @post = Post.new(post_params.merge(account: @account))
+      @post = Post.new(post_params.merge(account: current_user))
       authorize @post
 
       if @post.save

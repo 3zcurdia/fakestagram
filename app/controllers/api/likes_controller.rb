@@ -10,12 +10,14 @@ module Api
       authorize(@likes)
     end
 
+    def show; end
+
     # POST /likes
     def create
-      @like = @post.likes.find_or_initialize_by(account: @account)
+      @like = @post.likes.find_or_initialize_by(account: current_user)
       authorize(@like)
       if @like.persisted? || @like.save
-        render json: @like, status: :created
+        render :show, status: :created
       else
         render json: @like.errors, status: :unprocessable_entity
       end
@@ -24,7 +26,7 @@ module Api
     # DELETE /likes/1
     def destroy
       authorize(@post)
-      @post.likes.where(account: @account).destroy_all
+      @post.likes.where(account: current_user).destroy_all
     end
 
     private

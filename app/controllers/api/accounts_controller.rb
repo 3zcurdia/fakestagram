@@ -2,7 +2,7 @@
 
 module Api
   class AccountsController < BaseController
-    skip_before_action :set_account
+    skip_before_action :current_user
     # GET /accounts/1
     def show
       @account = Account.find(params[:id])

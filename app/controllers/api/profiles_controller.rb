@@ -3,8 +3,8 @@
 module Api
   class ProfilesController < BaseController
     def show
-      authorize(@account, :show?)
-      render json: @account
+      authorize(current_user, :show?)
+      render json: current_user
     end
   end
 end

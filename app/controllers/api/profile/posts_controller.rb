@@ -4,7 +4,7 @@ module Api
   module Profile
     class PostsController < BaseController
       def index
-        @posts = @account.posts.includes(:account, image_attachment: :blob)
+        @posts = current_user.posts.includes(:account, image_attachment: :blob)
         authorize(@posts, :index?)
       end
     end

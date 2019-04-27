@@ -2,6 +2,7 @@
 
 json.id @comment.id
 json.author do
+  json.id @comment.author_id
   json.name @comment.author_name
 end
 json.content @comment.content
