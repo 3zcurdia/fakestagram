@@ -5,6 +5,7 @@ json.title @post.title
 json.image_url @post.image.attached? ? rails_blob_url(@post.image) : nil
 json.likes_count @post.likes_count
 json.comments_count @post.comments_count
+json.liked @post.liked?(current_user)
 json.author do
   json.id @post.author_id
   json.name @post.author_name

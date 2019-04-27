@@ -18,7 +18,7 @@ class Post < ApplicationRecord
     end
   end
 
-  def liked_by?(account)
-    likes.where(account_id: account.id).exists?
+  def liked?(account)
+    likes.from_account(account.id).exists?
   end
 end
