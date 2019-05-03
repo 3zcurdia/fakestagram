@@ -20,6 +20,6 @@ class LikePolicy < ApplicationPolicy
   end
 
   def destroy?
-    owner?
+    true
   end
 end

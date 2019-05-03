@@ -29,8 +29,5 @@ class LikePolicyTest < ActiveSupport::TestCase
 
   def test_destroy
     assert policy.destroy?
-    policy.stub :owner?, false do
-      refute policy.destroy?
-    end
   end
 end
