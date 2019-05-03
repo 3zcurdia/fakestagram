@@ -25,8 +25,9 @@ module Api
 
     # DELETE /likes/1
     def destroy
-      authorize(@post)
-      @post.likes.where(account: current_user).destroy_all
+      @likes = @post.likes.where(account: current_user)
+      authorize(@likes)
+      @likes.destroy_all
     end
 
     private
