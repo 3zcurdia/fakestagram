@@ -5,5 +5,5 @@ class Like < ApplicationRecord
   belongs_to :post, inverse_of: :likes, counter_cache: true
   belongs_to :account, inverse_of: :likes
 
-  scope :from_account, -> (account_id) { where(account_id: account_id) }
+  scope :from_account, ->(account_id) { where(account_id: account_id) }
 end

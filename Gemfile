@@ -16,6 +16,7 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7' # Use Active Model has_secure_password
 
 gem 'bootsnap', '>= 1.4.1', require: false
+gem 'geocoder'
 gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 gem 'oj'
