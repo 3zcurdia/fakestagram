@@ -9,6 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'rails', '~> 6.0.0.rc1'
 
 gem 'aws-sdk-s3', require: false
+gem 'dalli'
 gem 'jbuilder', '~> 2.5'
 gem 'puma', '~> 3.11'
 
