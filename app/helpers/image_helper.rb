@@ -3,6 +3,6 @@
 module ImageHelper
   def source_image_url(image, size: nil)
     return unless image.attached?
-    image.service_url
+    rails_blob_url(image)
   end
 end
