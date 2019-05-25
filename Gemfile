@@ -10,7 +10,7 @@ gem 'rails', '~> 6.0.0.rc1'
 
 gem 'aws-sdk-s3', require: false
 gem 'dalli'
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.9'
 gem 'puma', '~> 3.11'
 
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
