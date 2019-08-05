@@ -18,7 +18,7 @@ gem 'puma', '~> 4.0'
 
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'geocoder'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.9'
 gem 'kaminari'
 gem 'oj'
 gem 'oj_mimic_json'
