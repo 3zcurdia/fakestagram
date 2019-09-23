@@ -12,7 +12,7 @@ gem 'aws-sdk-s3', require: false
 gem 'dalli'
 gem 'fast_jsonapi'
 gem 'jbuilder', '~> 2.9'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.2'
 
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use Active Model has_secure_password
