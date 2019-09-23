@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module Api::V2
   class CommentsController < BaseController
     before_action :set_post
     before_action :set_comment, only: %i[show update destroy]
@@ -9,11 +9,13 @@ module Api
     def index
       @comments = @post.comments.includes(:account)
       authorize(@comments)
+      render json: CommentSerializer.new(@comments).serialized_json
     end
 
     # GET /comments/1
     def show
       authorize(@comment)
+      render json: CommentSerializer.new(@comment).serialized_json
     end
 
     # POST /comments
@@ -22,7 +24,7 @@ module Api
       authorize(@comment)
 
       if @comment.save
-        render :show, status: :created
+        render json: CommentSerializer.new(@comment).serialized_json, status: :created
       else
         render json: @comment.errors, status: :unprocessable_entity
       end
@@ -32,7 +34,7 @@ module Api
     def update
       authorize(@comment)
       if @comment.update(comment_params)
-        render :show
+        render json: CommentSerializer.new(@comment).serialized_json, status: :created
       else
         render json: @comment.errors, status: :unprocessable_entity
       end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module Api::V1
   class AccountsController < BaseController
     skip_before_action :current_user
     # GET /accounts/1

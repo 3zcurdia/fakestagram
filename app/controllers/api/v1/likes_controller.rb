@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module Api::V1
   class LikesController < BaseController
     before_action :set_post
 

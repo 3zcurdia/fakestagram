@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module Api::V1
   class BaseController < ApplicationController
     before_action :default_format_json
     before_action :current_user

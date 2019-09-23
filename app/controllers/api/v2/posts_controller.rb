@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module Api::V2
   class PostsController < BaseController
     before_action :set_post, only: %i[show update destroy]
 
@@ -8,22 +8,23 @@ module Api
     def index
       posts = Post.page(params[:page])
       @posts = posts.includes(:account, image_attachment: :blob)
-      @liked_posts = posts.where(account_id: account_id).pluck(:id)
+      # @liked_posts = posts.where(account_id: account_id).pluck(:id)
       authorize @posts
+      render json: PostSerializer.new(@posts).serialized_json
     end
 
     # GET /posts/1
     def show
       authorize @post
+      render json: PostSerializer.new(@post).serialized_json
     end
 
     # POST /posts
     def create
       @post = Post.new(post_params.merge(account: current_user))
       authorize @post
-
       if @post.save
-        render :show, status: :created
+        render json: PostSerializer.new(@post).serialized_json, status: :created
       else
         render json: @post.errors, status: :unprocessable_entity
       end
@@ -33,7 +34,7 @@ module Api
     def update
       authorize @post
       if @post.update(post_params)
-        render :show
+        render json: PostSerializer.new(@post).serialized_json
       else
         render json: @post.errors, status: :unprocessable_entity
       end

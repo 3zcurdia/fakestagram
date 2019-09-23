@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module Api::V2
   module Profile
     class PostsController < BaseController
       def index

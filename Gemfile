@@ -10,6 +10,7 @@ gem 'rails', '~> 6.0.0'
 
 gem 'aws-sdk-s3', require: false
 gem 'dalli'
+gem 'fast_jsonapi'
 gem 'jbuilder', '~> 2.9'
 gem 'puma', '~> 4.1'
 

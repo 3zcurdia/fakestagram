@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class Api::Profile::PostsControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::Profile::PostsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

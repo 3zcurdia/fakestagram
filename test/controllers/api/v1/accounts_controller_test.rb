@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class AccountsControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::AccountsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @account = accounts(:one)
   end
