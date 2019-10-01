@@ -2,7 +2,7 @@
 
 module Api::V2
   class AccountsController < BaseController
-    skip_before_action :current_user
+    skip_before_action :current_user, only: :create
     # GET /accounts/1
     def show
       @account = Account.find(params[:id])

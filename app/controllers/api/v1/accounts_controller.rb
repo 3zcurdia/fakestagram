@@ -2,11 +2,11 @@
 
 module Api::V1
   class AccountsController < BaseController
-    skip_before_action :current_user
+    skip_before_action :current_user, only: :create
     # GET /accounts/1
     def show
       @account = Account.find(params[:id])
-      render json: @account
+      authorize(@account)
     end
 
     # POST /accounts
@@ -14,7 +14,17 @@ module Api::V1
       @account = Account.new(account_params)
 
       if @account.save
-        render json: @account, status: :created
+        render :show, status: :created
+      else
+        render json: @account.errors, status: :unprocessable_entity
+      end
+    end
+
+    # PATCH/PUT /accounts/1
+    def update
+      @account = Account.find(params[:id])
+      if @account.update(account_params)
+        render :show
       else
         render json: @account.errors, status: :unprocessable_entity
       end
@@ -23,7 +33,7 @@ module Api::V1
     private
 
     def account_params
-      params.permit(:name, :device_number, :device_model)
+      params.permit(:avatar, :avatar_data, :name, :device_number, :device_model)
     end
   end
 end
