@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.id @account.id
 json.name @account.name
 json.device_number @account.device_number
