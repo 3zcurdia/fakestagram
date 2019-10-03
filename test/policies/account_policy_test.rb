@@ -20,7 +20,7 @@ class AccountPolicyTest < ActiveSupport::TestCase
   end
 
   def test_update
-    refute policy.update?
+    assert policy.update?
   end
 
   def test_destroy

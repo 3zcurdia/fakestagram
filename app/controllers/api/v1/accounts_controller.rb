@@ -23,6 +23,8 @@ module Api::V1
     # PATCH/PUT /accounts/1
     def update
       @account = Account.find(params[:id])
+      authorize(@account)
+
       if @account.update(account_params)
         render :show
       else
