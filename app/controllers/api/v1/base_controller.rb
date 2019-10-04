@@ -2,7 +2,6 @@
 
 module Api::V1
   class BaseController < ApplicationController
-    include ActionController::Caching
     before_action :default_format_json
     before_action :current_user
 

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# json.cache! @post do
 json.id @post.id
 json.title @post.title
 json.location @post.location
@@ -15,4 +14,3 @@ json.author do
 end
 json.created_at @post.created_at
 json.updated_at @post.updated_at
-# end

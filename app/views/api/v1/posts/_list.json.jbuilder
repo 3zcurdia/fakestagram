@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 json.array! posts do |post|
-  # json.cache! post do
   json.id post.id
   json.title post.title
   json.location post.location
@@ -16,5 +15,4 @@ json.array! posts do |post|
   end
   json.created_at post.created_at
   json.updated_at post.updated_at
-  # end
 end
