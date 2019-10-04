@@ -12,6 +12,7 @@ json.array! posts do |post|
   json.author do
     json.id post.author_id
     json.name post.author_name
+    json.avatar_url source_image_url(post.account.avatar)
   end
   json.created_at post.created_at
   json.updated_at post.updated_at
