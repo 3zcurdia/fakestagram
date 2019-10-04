@@ -7,7 +7,6 @@ Fake instagram api, an MVP concept for academic purposes
 
 ## TODO
 
-- [ ] Allow users to upload their profile picture
 - [ ] Implement JWT authentication strategy with Wardern
 
 ## License
