@@ -10,9 +10,16 @@ Style/Documentation:
 Style/ClassAndModuleChildren:
   Exclude:
     - test/**/*.rb
+    - app/controllers/**/*.rb
 
 Style/NumericLiterals:
   Exclude:
+    - db/schema.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*.rb
+    - config/routes.rb
     - db/schema.rb
 
 Metrics:

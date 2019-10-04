@@ -1,4 +1,4 @@
-name: Ruby
+name: Ruby CI
 
 on: [push]
 
@@ -24,6 +24,7 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+        gem install rubocop
 
     - name: Setup Database
       env:
@@ -36,6 +37,9 @@ jobs:
         cp config/database.ci.yml config/database.yml
         bundle exec rails db:create
         bundle exec rails db:schema:load
+
+    - name: Linter
+      run: rubocop
 
     - name: Run tests
       env:
