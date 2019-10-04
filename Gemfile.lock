@@ -107,10 +107,9 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    listen (3.1.5)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-      ruby_dep (~> 1.2)
+    listen (3.2.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -179,7 +178,6 @@ GEM
       ffi (~> 1.0)
     ruby-vips (2.0.15)
       ffi (~> 1.9)
-    ruby_dep (1.5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -212,7 +210,7 @@ DEPENDENCIES
   image_processing (~> 1.9)
   jbuilder (~> 2.9)
   kaminari
-  listen (>= 3.0.5, < 3.2)
+  listen (>= 3.0.5, < 3.3)
   oj
   oj_mimic_json
   pg (>= 0.18, < 2.0)
