@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
@@ -25,15 +23,16 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [48, 48]
   end
 
   version :small do
     process resize_to_fit: [150, 150]
   end
 
+
   def extension_whitelist
-    %w[jpg jpeg png]
+    %w(jpg jpeg png)
   end
 
   # Override the filename of the uploaded files:

@@ -24,6 +24,7 @@ module Api::V1
     def update
       @account = Account.find(params[:id])
       authorize(@account)
+      binding.pry
 
       if @account.update(account_params)
         render :show

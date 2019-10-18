@@ -1,31 +1,25 @@
 # frozen_string_literal: true
 
-class Base64File
+class Base64File < StringIO
   def initialize(base64_data)
     @base64_data = base64_data
-    return unless block_given?
-
-    decode!
-    yield(self)
+    @decoded_data = decode!
+    super(@decoded_data)
   end
 
   def decode!
     raise 'Invalid data format' unless valid?
 
     @headers, data = base64_data.split(',')
-    @decoded_data  = Base64.decode64(data)
+    Base64.decode64(data)
   end
 
-  def filename
-    @filename ||= SecureRandom.uuid
+  def original_filename
+    @original_filename ||= SecureRandom.uuid
   end
 
   def content_type
     @content_type ||= get_content_type(headers)
-  end
-
-  def io
-    @io ||= StringIO.new(decoded_data)
   end
 
   def valid?
