@@ -23,7 +23,7 @@ CarrierWave.configure do |config|
     config.aws_credentials = {
       access_key_id: Rails.application.credentials.aws[:access_key_id],
       secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      region: 'us-east-1'
+      region: 'us-west-2'
     }
   else
     config.storage = :file
