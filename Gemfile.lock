@@ -130,6 +130,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
+    mime-types (3.3)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.1009)
     mimemagic (0.3.3)
     mini_magick (4.9.5)
     mini_mime (1.0.2)
@@ -225,6 +228,7 @@ DEPENDENCIES
   jbuilder (~> 2.9)
   kaminari
   listen (>= 3.0.5, < 3.3)
+  mime-types
   oj
   oj_mimic_json
   pg (>= 0.18, < 2.0)

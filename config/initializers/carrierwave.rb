@@ -28,4 +28,6 @@ CarrierWave.configure do |config|
   else
     config.storage = :file
   end
+
+  config.asset_host = ActionController::Base.asset_host
 end

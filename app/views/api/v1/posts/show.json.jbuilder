@@ -10,7 +10,7 @@ json.liked @post.liked?(current_user)
 json.author do
   json.id @post.author_id
   json.name @post.author_name
-  json.avatar_url (@post.account.avatar.url
+  json.avatar_url @post.account.avatar_url
 end
 json.created_at @post.created_at
 json.updated_at @post.updated_at

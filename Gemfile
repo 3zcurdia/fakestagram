@@ -22,6 +22,7 @@ gem 'bootsnap', '>= 1.4.1', require: false
 gem 'geocoder'
 gem 'image_processing', '~> 1.9'
 gem 'kaminari'
+gem 'mime-types', require: 'mime/types/full'
 gem 'oj'
 gem 'oj_mimic_json'
 gem 'pundit'

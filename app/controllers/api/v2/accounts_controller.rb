@@ -23,7 +23,7 @@ module Api::V2
     private
 
     def account_params
-      params.permit(:name, :device_number, :device_model)
+      params.permit(:name, :device_number, :device_model, :avatar, :avatar_data)
     end
   end
 end
