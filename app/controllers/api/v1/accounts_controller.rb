@@ -20,18 +20,6 @@ module Api::V1
       end
     end
 
-    # PATCH/PUT /accounts/1
-    def update
-      @account = Account.find(params[:id])
-      authorize(@account)
-
-      if @account.update(account_params)
-        render :show
-      else
-        render json: @account.errors, status: :unprocessable_entity
-      end
-    end
-
     private
 
     def account_params
