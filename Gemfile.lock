@@ -93,8 +93,6 @@ GEM
     crass (1.0.4)
     dalli (2.7.10)
     erubi (1.9.0)
-    fast_jsonapi (1.5)
-      activesupport (>= 4.2)
     ffi (1.11.1)
     geocoder (1.5.2)
     globalid (0.4.2)
@@ -222,7 +220,6 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   carrierwave-aws
   dalli
-  fast_jsonapi
   geocoder
   image_processing (~> 1.9)
   jbuilder (~> 2.9)

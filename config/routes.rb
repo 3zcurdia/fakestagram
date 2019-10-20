@@ -3,26 +3,13 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :accounts, except: %i[index destroy]
+      resources :accounts, only: :create
       resources :posts do
         resource :like, only: %i[create destroy]
         resources :likes, only: :index
         resources :comments
       end
-      resource :profile, only: :show
-      namespace :profile do
-        resources :posts, only: :index
-      end
-    end
-
-    namespace :v2 do
-      resources :accounts, except: %i[index destroy]
-      resources :posts do
-        resource :like, only: %i[create destroy]
-        resources :likes, only: :index
-        resources :comments
-      end
-      resource :profile, only: :show
+      resource :profile, only: [:show, :update]
       namespace :profile do
         resources :posts, only: :index
       end
