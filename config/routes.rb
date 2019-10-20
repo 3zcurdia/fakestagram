@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         resources :likes, only: :index
         resources :comments
       end
-      resource :profile, only: [:show, :update]
+      resource :profile, only: %i[show update]
       namespace :profile do
         resources :posts, only: :index
       end
