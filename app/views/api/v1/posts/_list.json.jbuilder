@@ -5,13 +5,18 @@ json.array! posts do |post|
   json.title post.title
   json.location post.location
   json.image_url post.image.url
+  json.image do
+    json.small_url post.account.avatar_url(:small)
+    json.medium_url post.account.avatar_url(:medium)
+    json.large_url post.account.avatar_url(:large)
+  end
   json.likes_count post.likes_count
   json.comments_count post.comments_count
   json.liked liked_posts.include?(post.id)
   json.author do
     json.id post.author_id
     json.name post.author_name
-    json.avatar_url post.account.avatar_url
+    json.avatar_url post.account.avatar_url(:thumbnail)
   end
   json.created_at post.created_at
   json.updated_at post.updated_at

@@ -24,12 +24,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  version :thumb do
-    process resize_to_fit: [48, 48]
+  version :thumbnail do
+    process resize_to_fit: [92, 92]
   end
 
   version :small do
-    process resize_to_fit: [150, 150]
+    process resize_to_fit: [192, 192]
   end
 
   def extension_whitelist
