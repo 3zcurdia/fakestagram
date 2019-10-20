@@ -7,7 +7,7 @@ module Api::V1
     # GET /posts
     def index
       posts = Post.page(params[:page])
-      @posts = posts.includes(:account, image_attachment: :blob)
+      @posts = posts.includes(:account)
       @liked_posts = posts.where(account_id: account_id).pluck(:id)
       authorize @posts
     end

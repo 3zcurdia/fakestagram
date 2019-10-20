@@ -6,9 +6,9 @@ json.array! posts do |post|
   json.location post.location
   json.image_url post.image.url
   json.image do
-    json.small_url post.account.avatar_url(:small)
-    json.medium_url post.account.avatar_url(:medium)
-    json.large_url post.account.avatar_url(:large)
+    json.small_url post.image_url(:small)
+    json.medium_url post.image_url(:medium)
+    json.large_url post.image_url(:large)
   end
   json.likes_count post.likes_count
   json.comments_count post.comments_count
