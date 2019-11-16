@@ -33,7 +33,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def extension_whitelist
-    %w[jpg jpeg png]
+    %w[jpg jpeg png tiff]
   end
 
   # Override the filename of the uploaded files:
