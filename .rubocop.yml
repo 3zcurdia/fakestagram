@@ -3,6 +3,8 @@ AllCops:
 
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - bin/bundle
 
 Style/Documentation:
   Enabled: false

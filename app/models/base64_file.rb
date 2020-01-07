@@ -36,7 +36,7 @@ class Base64File < StringIO
   # Determine content type from input, with provided type as fallback
   def fetch_content_type
     detected_type = MimeMagic.by_magic(bytes)
-    (detected_type&.type) || headers.split(';base64').first
+    detected_type&.type || headers.split(';base64').first
   end
 
   # Determine content type from input, with provided type as fallback
