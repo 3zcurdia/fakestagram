@@ -19,7 +19,7 @@ gem 'puma', '~> 4.3'
 
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'geocoder'
-gem 'image_processing', '~> 1.9'
+gem 'image_processing', '~> 1.10'
 gem 'kaminari'
 gem 'mime-types', require: 'mime/types/full'
 gem 'oj'
