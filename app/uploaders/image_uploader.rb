@@ -18,14 +18,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :small do
+    process gaussian_blur: 0.3
     process resize_to_fit: [128, 128]
   end
 
   version :medium do
+    process gaussian_blur: 0.3
     process resize_to_fit: [320, 320]
-  end
-
-  version :large do
-    process resize_to_fit: [1024, 1024]
   end
 end

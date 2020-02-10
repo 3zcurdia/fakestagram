@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  include UserData
   belongs_to :user, inverse_of: :posts
   has_many :comments, inverse_of: :post, dependent: :destroy
+
+  delegate :id, :name, to: :user, allow_nil: true, prefix: true
 
   validates :title, presence: true
 
