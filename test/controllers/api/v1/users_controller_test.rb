@@ -2,15 +2,15 @@
 
 require 'test_helper'
 
-class Api::V1::AccountsControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @account = accounts(:one)
+    @user = users(:one)
   end
 
-  test 'should create account' do
+  test 'should create user' do
     params = { device_model: 'iPhone Xs', device_number: SecureRandom.uuid, name: 'Test User' }
-    assert_difference('Account.count') do
-      post api_v1_accounts_url, params: params, as: :json
+    assert_difference('User.count') do
+      post api_v1_users_url, params: params, as: :json
     end
 
     assert_response 201

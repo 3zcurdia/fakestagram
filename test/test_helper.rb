@@ -13,7 +13,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def default_headers
-    { authorization: accounts(:one).id }
+    { authorization: users(:one).id }
   end
 
   def json_response

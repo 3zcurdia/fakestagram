@@ -7,12 +7,12 @@ module Api::V1
 
     protected
 
-    def account_id
-      @account_id ||= request.headers['Authorization']&.split()&.last
+    def user_id
+      @user_id ||= request.headers['Authorization']&.split()&.last
     end
 
-    def set_account
-      Account.find(account_id)
+    def set_user
+      User.find(user_id)
     rescue ActiveRecord::RecordNotFound
       head(:unauthorized)
     end
@@ -22,7 +22,7 @@ module Api::V1
     end
 
     def current_user
-      @current_user ||= set_account
+      @current_user ||= set_user
     end
     helper_method :current_user
   end

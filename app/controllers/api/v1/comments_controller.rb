@@ -7,7 +7,7 @@ module Api::V1
 
     # GET /comments
     def index
-      @comments = @post.comments.includes(:account)
+      @comments = @post.comments.includes(:user)
       authorize(@comments)
     end
 
@@ -18,7 +18,7 @@ module Api::V1
 
     # POST /comments
     def create
-      @comment = @post.comments.build(comment_params.merge(account: current_user))
+      @comment = @post.comments.build(comment_params.merge(user: current_user))
       authorize(@comment)
 
       if @comment.save

@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
-class LikePolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
-  end
-
-  def index?
-    true
   end
 
   def show?
@@ -19,7 +15,7 @@ class LikePolicy < ApplicationPolicy
     true
   end
 
-  def destroy?
+  def update?
     true
   end
 end

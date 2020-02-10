@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 json.id @comment.id
-json.author do
-  json.id @comment.author_id
-  json.name @comment.author_name
-  json.avatar_url @comment.account.avatar_url(:thumbnail)
+json.user do
+  json.id @comment.user_id
+  json.name @comment.user_name
+  json.avatar_url @comment.user.avatar_url
 end
 json.content @comment.content
 json.created_at @comment.created_at

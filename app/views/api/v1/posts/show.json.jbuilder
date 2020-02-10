@@ -2,20 +2,17 @@
 
 json.id @post.id
 json.title @post.title
-json.location @post.location
 json.image_url @post.image.url
 json.image do
   json.small_url @post.image_url(:small)
   json.medium_url @post.image_url(:medium)
   json.large_url @post.image_url(:large)
 end
-json.likes_count @post.likes_count
 json.comments_count @post.comments_count
-json.liked @post.liked?(current_user)
-json.author do
-  json.id @post.author_id
-  json.name @post.author_name
-  json.avatar_url @post.account.avatar_url(:thumbnail)
+json.user do
+  json.id @post.user_id
+  json.name @post.user_name
+  json.avatar_url @post.user.avatar_url(:thumbnail)
 end
 json.created_at @post.created_at
 json.updated_at @post.updated_at

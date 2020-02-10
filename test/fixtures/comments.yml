@@ -2,10 +2,10 @@
 
 one:
   post: one
-  account: one
+  user: one
   content: Lorem ipsum dolor sit amet
 
 two:
   post: two
-  account: two
+  user: two
   content: consectetur adipisicing elit, sed do eiusmod tempor

@@ -2,13 +2,13 @@
 
 require 'test_helper'
 
-class AccountPolicyTest < ActiveSupport::TestCase
-  def account
-    @account ||= accounts(:one)
+class UserPolicyTest < ActiveSupport::TestCase
+  def user
+    @user ||= users(:one)
   end
 
   def policy
-    @policy ||= AccountPolicy.new(account, account)
+    @policy ||= UserPolicy.new(user, user)
   end
 
   def test_show

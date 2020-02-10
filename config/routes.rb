@@ -3,10 +3,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :accounts, only: :create
+      post :sign_up, to: 'users#create'
       resources :posts do
-        resource :like, only: %i[create destroy]
-        resources :likes, only: :index
         resources :comments
       end
       resource :profile, only: %i[show update]

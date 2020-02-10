@@ -7,8 +7,7 @@ module Api::V1
     # GET /posts
     def index
       posts = Post.page(params[:page])
-      @posts = posts.includes(:account)
-      @liked_posts = posts.where(account_id: account_id).pluck(:id)
+      @posts = posts.includes(:user)
       authorize @posts
     end
 
@@ -19,7 +18,7 @@ module Api::V1
 
     # POST /posts
     def create
-      @post = Post.new(post_params.merge(account: current_user))
+      @post = Post.new(post_params.merge(user: current_user))
       authorize @post
 
       if @post.save
@@ -52,7 +51,7 @@ module Api::V1
     end
 
     def post_params
-      params.permit(:image, :image_data, :title, :description, :latitude, :longitude)
+      params.permit(:image, :image_data, :background_color, :title, :description, :latitude, :longitude)
     end
   end
 end

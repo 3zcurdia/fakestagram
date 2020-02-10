@@ -3,8 +3,8 @@
 require 'test_helper'
 
 class PostPolicyTest < ActiveSupport::TestCase
-  def account
-    @account ||= accounts(:one)
+  def user
+    @user ||= users(:one)
   end
 
   def post
@@ -12,7 +12,7 @@ class PostPolicyTest < ActiveSupport::TestCase
   end
 
   def policy
-    @policy ||= PostPolicy.new(account, post)
+    @policy ||= PostPolicy.new(user, post)
   end
 
   def test_show

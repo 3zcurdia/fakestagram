@@ -4,8 +4,7 @@ module Api::V1
   module Profile
     class PostsController < BaseController
       def index
-        @posts = current_user.posts.includes(:account)
-        @liked_posts = @posts.where(account_id: account_id).pluck(:id)
+        @posts = current_user.posts.includes(:user)
         authorize(@posts, :index?)
       end
     end

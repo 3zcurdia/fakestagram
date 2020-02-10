@@ -3,8 +3,8 @@
 require 'test_helper'
 
 class CommentPolicyTest < ActiveSupport::TestCase
-  def account
-    @account ||= accounts(:one)
+  def user
+    @user ||= users(:one)
   end
 
   def comment
@@ -12,7 +12,7 @@ class CommentPolicyTest < ActiveSupport::TestCase
   end
 
   def policy
-    @policy ||= PostPolicy.new(account, comment)
+    @policy ||= PostPolicy.new(user, comment)
   end
 
   def test_show
