@@ -2,7 +2,7 @@
 
 module Api::V1
   class UsersController < BaseController
-    skip_before_action :current_user, only: :create
+    skip_before_action :authenticate!, only: :create
     # GET /users/1
     def show
       @user = User.find(params[:id])

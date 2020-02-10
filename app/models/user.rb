@@ -6,6 +6,10 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def avatar_url
-    'https://via.placeholder.com/150.jpg'
+    Faker::Avatar.image(slug: slug, size: "150x150", format: "jpg")
+  end
+
+  def slug
+    @slug ||= name.downcase.tr('-')
   end
 end
