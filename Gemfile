@@ -11,7 +11,7 @@ gem 'rails', '~> 6.0.2'
 gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-aws'
 gem 'dalli'
-gem 'jbuilder', '~> 2.9'
+gem 'jbuilder', '~> 2.10'
 gem 'puma', '~> 4.3'
 
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
