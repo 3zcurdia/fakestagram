@@ -18,7 +18,7 @@ gem 'puma', '~> 4.3'
 # gem 'bcrypt', '~> 3.1.7' # Use Active Model has_secure_password
 
 gem 'bootsnap', '>= 1.4.1', require: false
-gem 'image_processing', '~> 1.10'
+gem 'mini_magick'
 gem 'kaminari'
 gem 'mime-types', require: 'mime/types/full'
 gem 'oj'
