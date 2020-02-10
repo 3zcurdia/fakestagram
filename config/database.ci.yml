@@ -1,7 +1,7 @@
 test:
   adapter: postgresql
   encoding: unicode
-  database: fakestagram_test
+  database: secretly_test
   pool: 5
   username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>

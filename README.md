@@ -1,9 +1,9 @@
-# Fakestagram
+# Secretly
 
 Fake instagram api, an MVP concept for academic purposes
 
 ## References
-- [Api documentation](https://fakestagram.docs.stoplight.io)
+- [Api documentation](https://secretly.docs.stoplight.io)
 
 ## TODO
 
