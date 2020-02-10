@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def avatar_url
-    'https://via.placeholder.com/150.png'
+    'https://via.placeholder.com/150.jpg'
   end
 end
