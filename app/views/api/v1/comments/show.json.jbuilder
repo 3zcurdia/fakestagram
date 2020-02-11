@@ -4,7 +4,7 @@ json.id @comment.id
 json.user do
   json.id @comment.user_id
   json.name @comment.user_name
-  json.avatar_url @comment.user.avatar_url
+  json.avatar_url @comment.user_avatar_url
 end
 json.content @comment.content
 json.created_at @comment.created_at

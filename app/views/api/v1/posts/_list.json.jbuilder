@@ -13,7 +13,7 @@ json.array! posts do |post|
   json.user do
     json.id post.user_id
     json.name post.user_name
-    json.avatar_url post.user.avatar_url(:thumbnail)
+    json.avatar_url post.user.avatar_url
   end
   json.created_at post.created_at
   json.updated_at post.updated_at

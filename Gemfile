@@ -13,6 +13,7 @@ gem 'carrierwave-aws'
 gem 'dalli'
 gem 'jbuilder', '~> 2.10'
 gem 'puma', '~> 4.3'
+gem 'activerecord-postgis-adapter'
 
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use Active Model has_secure_password

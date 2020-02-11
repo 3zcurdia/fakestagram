@@ -37,7 +37,7 @@ class ApplicationPolicy
   end
 
   def owner?
-    record.user_id == user.id
+    record.user_id == user&.id
   end
 
   class Scope

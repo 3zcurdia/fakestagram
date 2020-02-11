@@ -38,13 +38,6 @@ ActiveRecord::Schema.define(version: 2019_03_09_193142) do
     t.index ['user_id'], name: 'index_posts_on_user_id'
   end
 
-  create_table 'spatial_ref_sys', primary_key: 'srid', id: :integer, default: nil, force: :cascade do |t|
-    t.string 'auth_name', limit: 256
-    t.integer 'auth_srid'
-    t.string 'srtext', limit: 2048
-    t.string 'proj4text', limit: 2048
-  end
-
   create_table 'users', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'public_key'

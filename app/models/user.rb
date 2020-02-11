@@ -10,6 +10,6 @@ class User < ApplicationRecord
   end
 
   def slug
-    @slug ||= name.downcase.tr('-')
+    @slug ||= name&.downcase&.tr('-')
   end
 end
