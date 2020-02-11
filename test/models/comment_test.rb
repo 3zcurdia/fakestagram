@@ -12,6 +12,6 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   def test_author_data
-    assert_equal 'Joe Doe', comment.user_name
+    assert_equal 'Joe.Doe', comment.user_username
   end
 end

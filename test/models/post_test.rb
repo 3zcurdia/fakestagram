@@ -13,7 +13,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   def test_author_data
-    assert_equal 'Joe Doe', post.user_name
+    assert_equal 'Joe.Doe', post.user_username
   end
 
   def test_invalid_nil_title

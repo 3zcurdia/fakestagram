@@ -12,11 +12,15 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_invalid_nil_name
-    user.name = nil
+    user.username = nil
     refute user.valid?
   end
 
-  def test_id_as_uuid
-    assert user.id =~ /[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}/
+  def test_valid_password
+    assert user.authenticate('secret123')
+  end
+
+  def test_invalid_password
+    refute user.authenticate('i.am.batman')
   end
 end

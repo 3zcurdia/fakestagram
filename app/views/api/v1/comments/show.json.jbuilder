@@ -3,7 +3,7 @@
 json.id @comment.id
 json.user do
   json.id @comment.user_id
-  json.name @comment.user_name
+  json.name @comment.user_username
   json.avatar_url @comment.user_avatar_url
 end
 json.content @comment.content

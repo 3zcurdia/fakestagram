@@ -12,7 +12,7 @@ json.array! posts do |post|
   json.comments_count post.comments_count
   json.user do
     json.id post.user_id
-    json.name post.user_name
+    json.name post.user_username
     json.avatar_url post.user.avatar_url
   end
   json.created_at post.created_at
