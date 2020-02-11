@@ -7,29 +7,31 @@ module Api::V1
 
     protected
 
-    # def user_id
-    #   @user_id ||= request.headers['Authorization']&.split()&.last
-    # end
-    #
-    # def set_user
-    #   User.find(user_id)
-    # rescue ActiveRecord::RecordNotFound
-    #   head(:unauthorized)
-    # end
+    def authenticate!
+      head(:unauthorized) unless current_user
+    end
 
     def default_format_json
       request.format = 'json'
     end
 
     def current_user
-      # @current_user ||= set_user
+      return @current_user if defined?(@current_user)
+      return unless auth_token
+
+      @current_user = User.find(auth_payload['sub'])
+    rescue ActiveRecord::RecordNotFound
+      head(:unauthorized)
     end
-    helper_method :current_user
 
     private
 
-    def authenticate!
-      true
+    def auth_payload
+      Token.decode(auth_token)
+    end
+
+    def auth_token
+      request.headers['Authorization']&.scan(/Bearer(.*)$/)&.flatten&.last&.strip
     end
   end
 end

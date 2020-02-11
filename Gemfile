@@ -20,6 +20,7 @@ gem 'bcrypt', '~> 3.1.13' # Use Active Model has_secure_password
 
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'faker'
+gem 'jwt'
 gem 'kaminari'
 gem 'mime-types', require: 'mime/types/full'
 gem 'mini_magick'

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :fake, only: :show
       post :sign_up, to: 'users#create'
+      post :sign_in, to: 'sessions#create'
       resources :posts do
         resources :comments
       end
