@@ -23,6 +23,7 @@ module Api::V1
     rescue ActiveRecord::RecordNotFound
       head(:unauthorized)
     end
+    helper_method :current_user
 
     private
 

@@ -11,10 +11,14 @@ class User < ApplicationRecord
   end
 
   def token
-    Token.encode(
+    Token.encode({
+      exp: Time.now.to_i + 86_400,
+      iat: Time.now.to_i,
       sub: id,
-      username: username,
-      iat: Time.zone.now.utc
-    )
+      iss: 'secretly',
+      user: {
+        username: username
+      }
+    })
   end
 end
