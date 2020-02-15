@@ -2,6 +2,7 @@
 
 module Api::V1
   class FakesController < BaseController
+    skip_before_action :authenticate!
     def show
       render json: data
     end
@@ -10,7 +11,8 @@ module Api::V1
 
     def data
       {
-        username: Faker::Internet.username(specifier: 8)
+        username: Faker::Internet.username(specifier: 8),
+        email: Faker::Internet.email
       }
     end
   end
