@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       resource :fake, only: :show
       post :sign_up, to: 'users#create'
       post :sign_in, to: 'sessions#create'
+      namespace :posts do
+        get :near, to: 'near#index'
+      end
       resources :posts do
         resources :comments
       end

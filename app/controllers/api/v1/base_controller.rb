@@ -17,6 +17,7 @@ module Api::V1
 
     def current_user
       return unless auth_token
+
       @current_user ||= User.find(auth_payload['sub'])
     rescue ActiveRecord::RecordNotFound
       head(:unauthorized)

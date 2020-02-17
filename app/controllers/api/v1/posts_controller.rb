@@ -6,8 +6,7 @@ module Api::V1
 
     # GET /posts
     def index
-      posts = Post.page(params[:page])
-      @posts = posts.includes(:user)
+      @posts = Post.includes(:user).page(params[:page])
       authorize @posts
     end
 
@@ -18,7 +17,7 @@ module Api::V1
 
     # POST /posts
     def create
-      @post = Post.new(post_params.merge(user: current_user))
+      @post = Post.new(post_params.merge(user: current_user, ip_source: request.remote_ip))
       authorize @post
 
       if @post.save
