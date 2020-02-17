@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-json.partial! 'posts/list', posts: @posts
+json.partial! 'api/v1/posts/list', posts: @posts

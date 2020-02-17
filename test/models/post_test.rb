@@ -27,14 +27,20 @@ class PostTest < ActiveSupport::TestCase
     assert post.image?
   end
 
-  def test_latlon_storing
-    post.latitude = 19.40181717000000
-    post.longitude = -99.14291370000000
-    post.save!
-    post.reload
+  def test_save_latitude
+    post.latitude = 19.12345678901234
+    post.longitude = -99.12345678901234
+    post.save! && post.reload
     refute_nil post.lonlat
-    assert_equal 19.40181717000000, post.latitude
-    assert_equal -99.14291370000000, post.longitude
+    assert_equal(19.12345678901234, post.latitude)
+  end
+
+  def test_save_longitude
+    post.latitude = 19.12345678901234
+    post.longitude = -99.12345678901234
+    post.save! && post.reload
+    refute_nil post.lonlat
+    assert_equal(-99.12345678901234, post.longitude)
   end
 
   def test_ip_source

@@ -13,7 +13,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def default_headers
-    { authorization: users(:one).id }
+    { authorization: "Bearer #{users(:one).token}" }
   end
 
   def json_response

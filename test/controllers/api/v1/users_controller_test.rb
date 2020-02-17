@@ -8,12 +8,12 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create user' do
-    params = { device_model: 'iPhone Xs', device_number: SecureRandom.uuid, name: 'Test User' }
+    params = { username: 'micheal.scott', password: 'best.boss.ever' }
     assert_difference('User.count') do
-      post api_v1_users_url, params: params, as: :json
+      post api_v1_sign_up_url, params: params, as: :json
     end
 
     assert_response 201
-    assert_equal 'Test User', json_response[:name]
+    refute_nil json_response[:token]
   end
 end
