@@ -25,7 +25,6 @@ gem 'kaminari'
 gem 'mime-types', require: 'mime/types/full'
 gem 'mini_magick'
 gem 'oj'
-gem 'oj_mimic_json'
 gem 'pundit'
 gem 'rack-cors'
 
