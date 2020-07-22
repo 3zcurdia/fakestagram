@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.10'
 gem 'puma', '~> 4.3'
 
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
-gem 'bcrypt', '~> 3.1.13' # Use Active Model has_secure_password
+gem 'bcrypt', '~> 3.1.15' # Use Active Model has_secure_password
 
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'faker'
