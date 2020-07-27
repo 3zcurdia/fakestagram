@@ -149,7 +149,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    oj (3.10.7)
+    oj (3.10.8)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
