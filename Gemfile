@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 6.1.1'
 
 gem 'activerecord-postgis-adapter'
 gem 'carrierwave', '~> 2.0'
