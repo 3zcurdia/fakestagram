@@ -12,7 +12,7 @@ gem 'activerecord-postgis-adapter'
 gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-aws'
 gem 'dalli'
-gem 'jbuilder', '~> 2.10'
+gem 'jbuilder', '~> 2.11'
 gem 'puma', '~> 5.1'
 
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
