@@ -9,7 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'rails', '~> 6.1.3'
 
 gem 'activerecord-postgis-adapter'
-gem 'carrierwave', '~> 2.1'
+gem 'carrierwave', '~> 2.2'
 gem 'carrierwave-aws'
 gem 'dalli'
 gem 'jbuilder', '~> 2.11'
