@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   has_secure_password
-  has_many :posts, inverse_of: :user
+  has_many :posts, inverse_of: :user, dependent: :destroy
 
   validates :username, presence: true
 

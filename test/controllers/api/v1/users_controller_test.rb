@@ -14,6 +14,6 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response 201
-    refute_nil json_response[:token]
+    assert_not_nil json_response[:token]
   end
 end

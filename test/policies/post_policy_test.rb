@@ -26,14 +26,14 @@ class PostPolicyTest < ActiveSupport::TestCase
   def test_update
     assert policy.update?
     policy.stub :owner?, false do
-      refute policy.update?
+      assert_not policy.update?
     end
   end
 
   def test_destroy
     assert policy.destroy?
     policy.stub :owner?, false do
-      refute policy.destroy?
+      assert_not policy.destroy?
     end
   end
 end

@@ -24,6 +24,6 @@ class UserPolicyTest < ActiveSupport::TestCase
   end
 
   def test_destroy
-    refute policy.destroy?
+    assert_not policy.destroy?
   end
 end

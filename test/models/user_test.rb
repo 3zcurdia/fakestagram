@@ -13,7 +13,7 @@ class UserTest < ActiveSupport::TestCase
 
   def test_invalid_nil_name
     user.username = nil
-    refute user.valid?
+    assert_not user.valid?
   end
 
   def test_valid_password
@@ -21,6 +21,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_invalid_password
-    refute user.authenticate('i.am.batman')
+    assert_not user.authenticate('i.am.batman')
   end
 end

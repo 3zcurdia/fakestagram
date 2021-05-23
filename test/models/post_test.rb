@@ -9,7 +9,7 @@ class PostTest < ActiveSupport::TestCase
 
   def test_valid
     assert post.valid?
-    refute post.image?
+    assert_not post.image?
   end
 
   def test_author_data
@@ -18,11 +18,11 @@ class PostTest < ActiveSupport::TestCase
 
   def test_invalid_nil_title
     post.title = nil
-    refute post.valid?
+    assert_not post.valid?
   end
 
   def test_image_data_store
-    image_data = File.read(Rails.root.join('test', 'fixtures', 'files', 'base64_image.txt'))
+    image_data = File.read(Rails.root.join('test/fixtures/files/base64_image.txt'))
     post.update(image_data: image_data)
     assert post.image?
   end
@@ -31,7 +31,7 @@ class PostTest < ActiveSupport::TestCase
     post.latitude = 19.12345678901234
     post.longitude = -99.12345678901234
     post.save! && post.reload
-    refute_nil post.lonlat
+    assert_not_nil post.lonlat
     assert_equal(19.12345678901234, post.latitude)
   end
 
@@ -39,7 +39,7 @@ class PostTest < ActiveSupport::TestCase
     post.latitude = 19.12345678901234
     post.longitude = -99.12345678901234
     post.save! && post.reload
-    refute_nil post.lonlat
+    assert_not_nil post.lonlat
     assert_equal(-99.12345678901234, post.longitude)
   end
 
