@@ -11,6 +11,7 @@ module Api::V1
 
     def data
       {
+        name: Faker::Name.name,
         username: Faker::Internet.username(specifier: 8),
         email: Faker::Internet.email
       }
