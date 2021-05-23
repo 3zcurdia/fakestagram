@@ -1,7 +1,7 @@
 test:
   adapter: postgresql
   encoding: unicode
-  database: secretly_test
+  database: ci_test
   pool: 5
   username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
