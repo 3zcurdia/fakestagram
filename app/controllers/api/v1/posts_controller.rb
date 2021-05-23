@@ -3,6 +3,7 @@
 module Api::V1
   class PostsController < BaseController
     before_action :set_post, only: %i[show update destroy]
+    before_action :set_request_ip, only: %i[create update]
 
     # GET /posts
     def index
@@ -17,9 +18,7 @@ module Api::V1
 
     # POST /posts
     def create
-      params.merge!(ip_source: request.remote_ip)
-      @post = Post.new(post_params)
-      @post.user = current_user
+      @post = current_user.posts.build(post_params)
       authorize @post
 
       if @post.save
@@ -31,7 +30,6 @@ module Api::V1
 
     # PATCH/PUT /posts/1
     def update
-      params.merge!(ip_source: request.remote_ip)
       authorize @post
       if @post.update(post_params)
         render :show
@@ -50,6 +48,10 @@ module Api::V1
 
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_request_ip
+      params.merge!(ip_source: request.remote_ip)
     end
 
     def post_params
