@@ -17,8 +17,9 @@ module Api::V1
 
     # POST /posts
     def create
-      params.merge!(user: current_user, ip_source: request.remote_ip)
+      params.merge!(ip_source: request.remote_ip)
       @post = Post.new(post_params)
+      @post.user = current_user
       authorize @post
 
       if @post.save
@@ -52,7 +53,7 @@ module Api::V1
     end
 
     def post_params
-      params.permit(:image, :image_data, :background_color, :title, :description, :latitude, :longitude, :user, :ip_source)
+      params.permit(:image, :image_data, :background_color, :title, :description, :latitude, :longitude, :ip_source)
     end
   end
 end
