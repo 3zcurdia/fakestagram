@@ -1,6 +1,12 @@
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.0
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*.rb'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
 
 Metrics/LineLength:
   Max: 120
@@ -15,18 +21,7 @@ Style/ClassAndModuleChildren:
     - test/**/*.rb
     - app/controllers/**/*.rb
 
-Style/NumericLiterals:
-  Exclude:
-    - db/schema.rb
-
 Metrics/BlockLength:
   Exclude:
     - config/environments/*.rb
     - config/routes.rb
-    - db/schema.rb
-
-Metrics:
-  Exclude:
-    - bin/**
-    - db/schema.rb
-    - db/migrate/**.rb

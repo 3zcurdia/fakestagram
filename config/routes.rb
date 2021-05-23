@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'home#index'
   namespace :api do
     namespace :v1 do
       resource :fake, only: :show
@@ -18,5 +19,4 @@ Rails.application.routes.draw do
       end
     end
   end
-  root 'home#index'
 end
