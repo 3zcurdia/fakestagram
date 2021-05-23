@@ -13,6 +13,7 @@ class Post < ApplicationRecord
   }
 
   attr_writer :latitude, :longitude
+
   delegate :id, :username, :avatar_url, to: :user, allow_nil: true, prefix: true
   mount_uploader :image, ImageUploader
 

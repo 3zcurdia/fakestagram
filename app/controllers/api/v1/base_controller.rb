@@ -25,7 +25,7 @@ module Api::V1
     def auth_payload
       Token.decode(auth_token)
     rescue JWT::DecodeError
-       nil
+      nil
     end
 
     def auth_token

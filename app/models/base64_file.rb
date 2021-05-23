@@ -26,7 +26,7 @@ class Base64File < StringIO
   end
 
   def valid?
-    encoded_file&.is_a?(String) && encoded_file.strip.start_with?('data')
+    encoded_file.is_a?(String) && encoded_file.strip.start_with?('data')
   end
 
   private
