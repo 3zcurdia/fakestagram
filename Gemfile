@@ -22,6 +22,7 @@ gem 'bootsnap', '>= 1.4.1', require: false
 gem 'faker'
 gem 'jwt'
 gem 'kaminari'
+gem 'mimemagic'
 gem 'mime-types', require: 'mime/types/full'
 gem 'mini_magick'
 gem 'oj'

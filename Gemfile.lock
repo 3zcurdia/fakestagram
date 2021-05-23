@@ -144,6 +144,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.11.0)
     mini_mime (1.0.3)
     mini_portile2 (2.5.1)
@@ -248,6 +251,7 @@ DEPENDENCIES
   kaminari
   listen (>= 3.0.5, < 3.6)
   mime-types
+  mimemagic
   mini_magick
   oj
   pg (>= 0.18, < 2.0)
