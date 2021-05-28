@@ -2,6 +2,7 @@
 
 module Api::V1
   class PostsController < BaseController
+    skip_before_action :authenticate!, only: :index
     before_action :set_post, only: %i[show update destroy]
     before_action :set_request_ip, only: %i[create update]
 
