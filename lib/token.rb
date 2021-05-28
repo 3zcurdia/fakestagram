@@ -2,10 +2,10 @@
 
 class Token
   def self.encode(payload)
-    JWT.encode(payload, Rails.application.secrets.secret_key_base)
+    JWT.encode(payload, Rails.application.credentials.secret_key_base)
   end
 
   def self.decode(token)
-    JWT.decode(token, Rails.application.secrets.secret_key_base).first
+    JWT.decode(token, Rails.application.credentials.secret_key_base).first
   end
 end
