@@ -56,7 +56,7 @@ module Api::V1
     end
 
     def post_params
-      params.permit(:image, :image_data, :background_color, :title, :description, :latitude, :longitude, :ip_source)
+      params.permit(:image, :image_data, :background_color, :content, :description, :latitude, :longitude, :ip_source)
     end
   end
 end

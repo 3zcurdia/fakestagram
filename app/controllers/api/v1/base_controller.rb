@@ -13,8 +13,8 @@ module Api::V1
 
     def authenticate!
       auth_payload
-    rescue JWT::DecodeError => err
-      render(json: { error: err.message }, status: :unauthorized) and return
+    rescue JWT::DecodeError => e
+      render(json: { error: e.message }, status: :unauthorized) and return
     end
 
     def current_user

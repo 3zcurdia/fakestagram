@@ -30,6 +30,7 @@ gem 'pundit'
 gem 'rack-cors'
 
 group :development, :test do
+  gem 'annotate'
   gem 'bullet'
   gem 'pry-byebug'
   gem 'pry-rails'

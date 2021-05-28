@@ -8,7 +8,7 @@ class Api::V1::PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def default_params
-    { title: 'A post title' }
+    { content: 'A post title' }
   end
 
   test 'should get index' do
