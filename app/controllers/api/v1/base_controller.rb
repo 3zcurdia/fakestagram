@@ -12,11 +12,13 @@ module Api::V1
     end
 
     def authenticate!
-      head(:unauthorized) unless current_user
+      auth_payload
+    rescue JWT::DecodeError => err
+      render(json: { error: err.message }, status: :unauthorized) and return
     end
 
     def current_user
-      @current_user ||= User.find_by(id: auth_payload['sub']) if auth_payload
+      @current_user ||= User.find_by(id: auth_payload['sub'])
     end
     helper_method :current_user
 
@@ -24,8 +26,6 @@ module Api::V1
 
     def auth_payload
       Token.decode(auth_token)
-    rescue JWT::DecodeError
-      nil
     end
 
     def auth_token
