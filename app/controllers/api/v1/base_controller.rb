@@ -18,7 +18,7 @@ module Api::V1
     end
 
     def current_user
-      @current_user ||= User.find_by(id: auth_payload['sub'])
+      @current_user ||= User.find_by(id: auth_payload['sub']) if auth_payload
     end
     helper_method :current_user
 
