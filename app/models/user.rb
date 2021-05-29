@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   def avatar_url
-    Faker::Avatar.image(slug: username, size: '150x150', format: 'jpg')
+    @avatar_url ||= Faker::Avatar.image(slug: username, size: '256x256', format: 'jpg', set: 'set4')
   end
 
   def token

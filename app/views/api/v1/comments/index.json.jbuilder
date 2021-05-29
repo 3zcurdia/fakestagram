@@ -8,6 +8,6 @@ json.array! @comments do |comment|
     json.avatar_url comment.user_avatar_url
   end
   json.content comment.content
-  json.created_at comment.created_at
-  json.updated_at comment.updated_at
+  json.created_at comment.created_at.iso8601
+  json.updated_at comment.updated_at.iso8601
 end

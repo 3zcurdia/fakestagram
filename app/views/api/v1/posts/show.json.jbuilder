@@ -13,5 +13,5 @@ json.user do
   json.username @post.user_username
   json.avatar_url @post.user.avatar_url
 end
-json.created_at @post.created_at
-json.updated_at @post.updated_at
+json.created_at @post.created_at.iso8601
+json.updated_at @post.updated_at.iso8601
