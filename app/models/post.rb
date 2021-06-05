@@ -41,6 +41,8 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def image_data=(base64_data)
+    return unless base64_data
+
     self.image = Base64File.new(base64_data)
   end
 
