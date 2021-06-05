@@ -7,7 +7,7 @@ json.array! posts do |post|
   json.image do
     json.small_url post.image_url(:small)
     json.medium_url post.image_url(:medium)
-  end
+  end if image.present?
   json.comments_count post.comments_count
   json.user do
     json.id post.user_id
