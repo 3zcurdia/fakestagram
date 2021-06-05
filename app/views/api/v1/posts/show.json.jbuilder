@@ -3,10 +3,12 @@
 json.id @post.id
 json.content @post.content
 json.background_color @post.background_color
-json.image do
-  json.small_url @post.image_url(:small)
-  json.medium_url @post.image_url(:medium)
-end if post.image?
+if @post.image?
+  json.image do
+    json.small_url @post.image_url(:small)
+    json.medium_url @post.image_url(:medium)
+  end
+end
 json.comments_count @post.comments_count
 json.user do
   json.id @post.user_id
