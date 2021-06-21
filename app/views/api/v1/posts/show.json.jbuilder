@@ -7,6 +7,7 @@ if @post.image?
   json.image do
     json.small_url @post.image_url(:small)
     json.medium_url @post.image_url(:medium)
+    json.original_url @post.image_url
   end
 end
 json.comments_count @post.comments_count
