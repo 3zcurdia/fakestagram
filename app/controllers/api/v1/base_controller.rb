@@ -12,7 +12,8 @@ module Api::V1
     end
 
     def authenticate!
-      raise "Empty token" unless auth_payload
+      return if auth_payload
+      head :unauthorized and return
     rescue JWT::DecodeError => e
       render(json: { error: e.message }, status: :unauthorized) and return
     end
