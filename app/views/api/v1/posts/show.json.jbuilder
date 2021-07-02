@@ -11,6 +11,7 @@ if @post.image?
   end
 end
 json.comments_count @post.comments_count
+json.likes_count @post.likes_count
 json.user do
   json.id @post.user_id
   json.username @post.user_username
