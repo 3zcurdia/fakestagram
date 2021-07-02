@@ -5,3 +5,5 @@ json.user do
   json.username @like.user_username
   json.avatar_url @like.user.avatar_url
 end
+json.created_at @like.created_at.iso8601
+json.updated_at @like.updated_at.iso8601
