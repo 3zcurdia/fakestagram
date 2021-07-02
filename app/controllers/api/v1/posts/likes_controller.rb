@@ -29,7 +29,7 @@ module Api::V1::Posts
     private
 
     def set_post
-      @post = Post.find(parmas[:post_id])
+      @post = Post.find(params[:post_id])
     end
   end
 end
