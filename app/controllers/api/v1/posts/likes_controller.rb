@@ -9,7 +9,7 @@ module Api::V1::Posts
       authorize(@like)
 
       if @like.save
-        render :show, status: :created
+        render json: @like, status: :created
       else
         render json: @like.errors, status: :unprocessable_entity
       end
@@ -20,7 +20,7 @@ module Api::V1::Posts
       authorize(@like)
 
       if @like.destroy
-        render :show, status: :no_content
+        render json: @like, status: :no_content
       else
         render json: @like.errors, status: :unprocessable_entity
       end
