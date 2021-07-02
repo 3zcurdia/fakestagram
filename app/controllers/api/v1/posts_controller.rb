@@ -8,7 +8,7 @@ module Api::V1
 
     # GET /posts
     def index
-      @posts = Post.includes(:user).page(params[:page])
+      @posts = Post.includes(:user, :likes).page(params[:page])
       authorize @posts
     end
 

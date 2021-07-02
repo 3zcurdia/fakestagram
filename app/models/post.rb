@@ -48,6 +48,12 @@ class Post < ApplicationRecord
     self.image = Base64File.new(base64_data)
   end
 
+  def liked_by?(user)
+    return false unless user
+
+    likes.where(user_id: user.id).any?
+  end
+
   def latitude
     lonlat&.y
   end

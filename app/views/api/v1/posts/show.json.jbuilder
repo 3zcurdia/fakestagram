@@ -10,6 +10,7 @@ if @post.image?
     json.original_url @post.image_url
   end
 end
+json.liked @post.liked_by?(current_user)
 json.comments_count @post.comments_count
 json.likes_count @post.likes_count
 json.user do
