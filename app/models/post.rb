@@ -10,6 +10,7 @@
 #  content          :text             not null
 #  image            :string
 #  ip_source        :string
+#  likes_count      :integer          default(0)
 #  lonlat           :geography        point, 4326
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -26,6 +27,7 @@
 class Post < ApplicationRecord
   belongs_to :user, inverse_of: :posts
   has_many :comments, inverse_of: :post, dependent: :destroy
+  has_many :likes, as: :likeable
 
   validates :content, presence: true
   before_save :set_lonlat

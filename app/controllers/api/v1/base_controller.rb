@@ -13,6 +13,7 @@ module Api::V1
 
     def authenticate!
       return if auth_payload
+
       head :unauthorized and return
     rescue JWT::DecodeError => e
       render(json: { error: e.message }, status: :unauthorized) and return

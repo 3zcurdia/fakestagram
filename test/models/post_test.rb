@@ -10,6 +10,7 @@
 #  content          :text             not null
 #  image            :string
 #  ip_source        :string
+#  likes_count      :integer          default(0)
 #  lonlat           :geography        point, 4326
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

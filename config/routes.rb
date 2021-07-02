@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       end
       resources :posts do
         resources :comments
+        resource :likes, controller: 'posts/likes', only: %i[create destroy]
       end
       resource :profile, only: %i[show update]
       namespace :profile do
