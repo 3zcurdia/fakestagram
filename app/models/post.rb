@@ -27,7 +27,7 @@
 class Post < ApplicationRecord
   belongs_to :user, inverse_of: :posts
   has_many :comments, inverse_of: :post, dependent: :destroy
-  has_many :likes, as: :likeable
+  has_many :likes, as: :likeable, dependent: :destroy
 
   validates :content, presence: true
   before_save :set_lonlat
